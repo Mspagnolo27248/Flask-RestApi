@@ -14,9 +14,8 @@ app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///data.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
 api = Api(app) #Allows us to add resources to app
 app.secret_key = 'jose'
-@app.before_first_request
-def create_tables():
-    db.create_all()
+
+
 
 jwt = JWT(app,authenticate,identity) #/auth
 
